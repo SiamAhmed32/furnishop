@@ -82,40 +82,79 @@ export default function Header() {
       {/* Mobile drawer */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-y-0 right-0 w-72 bg-white dark:bg-neutral-900 z-50 p-6"
-          >
-            <button
+          <>
+            {/* 🔹 Overlay background */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
               onClick={() => setOpen(false)}
-              className="mb-6 p-2 border rounded-lg border-neutral-300 dark:border-neutral-700"
+              className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+            />
+
+            {/* 🔹 Slide-in menu */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed inset-y-0 right-0 w-72 bg-white dark:bg-neutral-900 shadow-xl z-50 p-6 flex flex-col"
             >
-              <X size={20} />
-            </button>
-            <nav className="flex flex-col gap-4">
-              <Link href="/products" onClick={() => setOpen(false)}>
-                {t.nav.products}
-              </Link>
-              <Link href="/stories" onClick={() => setOpen(false)}>
-                {t.nav.stories}
-              </Link>
-              <Link href="/contact" onClick={() => setOpen(false)}>
-                {t.nav.contact}
-              </Link>
               <button
-                onClick={() => {
-                  toggleLang();
-                  setOpen(false);
-                }}
-                className="px-3 py-1 rounded-lg border border-neutral-300 dark:border-neutral-700 text-sm"
+                onClick={() => setOpen(false)}
+                className="mb-6 p-2 border rounded-lg border-neutral-300 dark:border-neutral-700 self-end"
               >
-                {lang === "en" ? "বাংলা" : "English"}
+                <X size={20} />
               </button>
-            </nav>
-          </motion.div>
+
+              <motion.nav
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                variants={{
+                  hidden: { opacity: 0, x: 20 },
+                  show: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { staggerChildren: 0.1 },
+                  },
+                }}
+                className="flex flex-col gap-4 text-lg font-medium"
+              >
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                >
+                  <Link href="/products" onClick={() => setOpen(false)}>
+                    Products
+                  </Link>
+                </motion.div>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                >
+                  <Link href="/stories" onClick={() => setOpen(false)}>
+                    Stories
+                  </Link>
+                </motion.div>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                >
+                  <Link href="/contact" onClick={() => setOpen(false)}>
+                    Contact
+                  </Link>
+                </motion.div>
+              </motion.nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
