@@ -8,23 +8,22 @@ import { useMemo } from "react";
 import { applyFilters } from "../../lib/filters";
 import { useSearchParams, useRouter } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function ProductsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  // ✅ derive filters directly from searchParams
   const filters = {
-    q: searchParams.get("q") || "",
-    category: searchParams.get("category") || "All",
-    min: searchParams.get("min") || "",
-    max: searchParams.get("max") || "",
-    rating: searchParams.get("rating") || "",
+    q: searchParams?.get("q") || "",
+    category: searchParams?.get("category") || "All",
+    min: searchParams?.get("min") || "",
+    max: searchParams?.get("max") || "",
+    rating: searchParams?.get("rating") || "",
   };
 
-  // ✅ apply filters
   const list = useMemo(() => applyFilters(data, filters), [filters]);
 
-  // ✅ update URL when filters change
   const handleChange = (next) => {
     const params = new URLSearchParams();
 
