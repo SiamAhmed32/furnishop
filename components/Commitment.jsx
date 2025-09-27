@@ -29,12 +29,18 @@ const items = [
     text: "Ethical sourcing and strict quality control at every step.",
   },
 ];
+
 export default function Commitment() {
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       {/* gradient background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-50 via-teal-50 to-white dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-950" />
-      <div className="mx-auto max-w-7xl px-4 py-14">
+      <div
+        className="absolute inset-0 z-0 bg-gradient-to-br 
+        from-emerald-100 via-teal-50 to-white
+        dark:from-neutral-800 dark:via-neutral-900 dark:to-neutral-950"
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-14">
         <h2 className="text-2xl md:text-3xl font-semibold">
           Our Commitment & Values
         </h2>
@@ -51,9 +57,13 @@ export default function Commitment() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.4 }}
-              className="rounded-2xl border border-emerald-200/60 dark:border-emerald-900/40 bg-white/80 dark:bg-neutral-900/70 backdrop-blur p-5"
+              className="rounded-2xl border border-emerald-200/60 dark:border-emerald-900/40 
+              bg-white/90 dark:bg-neutral-900/80 backdrop-blur p-5 shadow-sm"
             >
-              <div className="inline-flex items-center justify-center rounded-xl border border-emerald-200/70 dark:border-emerald-900/50 p-3">
+              <div
+                className="inline-flex items-center justify-center rounded-xl border 
+              border-emerald-200/70 dark:border-emerald-900/50 p-3 bg-white dark:bg-neutral-800"
+              >
                 <Icon size={22} className="text-emerald-600" />
               </div>
               <h3 className="mt-3 font-medium">{title}</h3>

@@ -1,7 +1,10 @@
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
+
+/* Keep your providers exactly as your app expects them.
+   If you are using Redux for cart and LangProvider for i18n, import them. */
 import { Providers } from "../lib/providers";
 import { LangProvider } from "../lib/langContext";
-import { ThemeProvider } from "next-themes";
 
 export const metadata = {
   title: "FurniShop - Modern Furniture Store",
@@ -12,12 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={true}
-        >
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <LangProvider>
             <Providers>{children}</Providers>
           </LangProvider>

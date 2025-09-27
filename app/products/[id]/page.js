@@ -1,79 +1,63 @@
-"use client";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import ProductFilters from "../../components/ProductFilters";
-import ProductsGrid from "../../components/ProductsGrid";
-import data from "../../data/products.json";
-import { useEffect, useMemo, useState } from "react";
-import { applyFilters } from "../../lib/filters";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
+import data from '../../../data/products.json';
+import Image from 'next/image';
+import Link from 'next/link';
+import { AddToCartButton } from './parts';
 
-function paramsToFilters(params) {
-  return {
-    q: params.get("q") ?? "",
-    category: params.get("category") ?? "All",
-    min: params.get("min") ?? "",
-    max: params.get("max") ?? "",
-    rating: params.get("rating") ?? "",
-  };
+export async function generateStaticParams() {
+  return data.map(p => ({ id: p.id }));
 }
 
-export default function ProductsPage() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+export default function ProductDetail({ params }) {
+  const product = data.find(p => p.id === params.id);
 
-  // initialize from URL
-  const [filters, setFilters] = useState(() => paramsToFilters(searchParams));
-
-  // keep state in sync if URL changes (e.g., user clicked CategoryStrip link)
-  useEffect(() => {
-    setFilters(paramsToFilters(searchParams));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname, searchParams]);
-
-  // when filters change, write them to the current URL (no hardcoded '/products' or trailing slashes)
-  const handleChange = (next) => {
-    setFilters(next);
-    const sp = new URLSearchParams();
-    Object.entries(next).forEach(([k, v]) => {
-      if (!v) return;
-      if (k === "category" && v === "All") return;
-      sp.set(k, v);
-    });
-    const qs = sp.toString();
-    router.replace(qs ? `${pathname}?${qs}` : `${pathname}`);
-  };
-
-  const list = useMemo(() => applyFilters(data, filters), [filters]);
+  if (!product) {
+    return (
+      <>
+        <Header />
+        <main className="mx-auto max-w-7xl px-4 py-16">
+          <p className="text-sm text-neutral-500">Product not found.</p>
+          <Link href="/products" className="underline mt-3 inline-block">Back to products</Link>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
-      <Header />
-      <main className="pb-16">
-        <div className="mx-auto max-w-7xl px-4">
-          <h1 className="text-2xl md:text-3xl font-semibold pt-6 pb-2">
-            All Products
-          </h1>
-          <p className="text-sm text-neutral-500 mb-2">
-            Showing {list.length} {list.length === 1 ? "item" : "items"}
-          </p>
-        </div>
+      <Header/>
+      <main className="mx-auto max-w-7xl px-4 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800">
+            <Image src={product.image} alt={product.title} fill className="object-cover" />
+          </div>
+          <div>
+            <h1 className="text-2xl md:text-3xl font-semibold">{product.title}</h1>
+            <div className="mt-2 text-sm text-neutral-500">{product.category} • {product.rating}★</div>
+            <div className="mt-4 text-2xl font-semibold">${product.price}</div>
+            <p className="mt-4 text-neutral-700 dark:text-neutral-300">{product.description}</p>
 
-        <ProductFilters value={filters} onChange={handleChange} />
-
-        <div className="mx-auto max-w-7xl px-4 pt-6">
-          {list.length ? (
-            <ProductsGrid products={list} />
-          ) : (
-            <div className="text-sm text-neutral-600 dark:text-neutral-300 border rounded-xl p-6 bg-white/80 dark:bg-neutral-900/70 backdrop-blur">
-              No products match your filters. Try resetting filters or searching
-              a different term.
+            <div className="mt-6 flex gap-3">
+              <AddToCartButton product={product}/>
+              <Link href="/products" className="px-4 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700">
+                Continue browsing
+              </Link>
             </div>
-          )}
+
+            <div className="mt-10">
+              <h2 className="font-medium mb-3">Details</h2>
+              <ul className="list-disc ml-5 text-sm text-neutral-600 dark:text-neutral-300 space-y-1">
+                <li>Ships in 3–5 business days</li>
+                <li>30-day returns</li>
+                <li>Matte protective finish</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </main>
-      <Footer />
+      <Footer/>
     </>
   );
 }

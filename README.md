@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+FurniShop – Modern Furniture E-Commerce Platform
 
-## Getting Started
+Overview
 
-First, run the development server:
+FurniShop is a modern e-commerce web application built with Next.js, React, Tailwind CSS, and Redux Toolkit. It is designed for showcasing and selling furniture in a clean, responsive, and performance-optimized environment.
 
-```bash
+The platform combines dynamic product filtering, category browsing, cart management, and responsive layouts to deliver a professional online shopping experience that works seamlessly across desktop and mobile devices.
+
+
+---
+
+Problem Statement
+
+Many online furniture stores face recurring challenges:
+
+Poor filtering and navigation: Customers struggle to narrow down products by category, price, or rating.
+
+Inconsistent cart experience: Cart management is often unreliable, with lost items or slow updates.
+
+Unoptimized for mobile: A large portion of users browse from mobile, yet many sites fail to adapt properly.
+
+Visual inconsistency: Lack of dark mode and responsive design makes the shopping experience feel outdated.
+
+
+
+---
+
+Solution
+
+FurniShop addresses these issues with a streamlined approach:
+
+1. Advanced Filtering System
+
+Search by category, title, or keyword.
+
+Filter by price range and product rating.
+
+Always in sync with URL parameters for smooth navigation.
+
+
+
+2. Cart Built with Redux Toolkit
+
+Persistent cart state management.
+
+Add, update, and remove products instantly.
+
+Real-time cart badge in the header for user awareness.
+
+
+
+3. Responsive and Accessible UI
+
+Fully optimized for both desktop and mobile.
+
+Accessibility in mind: clear typography, consistent contrast, semantic HTML.
+
+
+
+4. Modern User Experience
+
+Framer Motion animations for smooth transitions.
+
+Dark and light theme support (system preference aware).
+
+SEO-friendly with Next.js App Router for better indexing.
+
+
+
+
+
+---
+
+Key Features
+
+Dynamic product listing with filters
+
+Product detail pages with descriptions and images
+
+Cart system with quantity updates
+
+Responsive design across devices
+
+Dark mode support
+
+Built with Next.js App Router for modern architecture
+
+
+
+---
+
+Technology Stack
+
+Framework: Next.js 15, React 19
+
+Styling: Tailwind CSS 4
+
+State Management: Redux Toolkit
+
+Animations: Framer Motion
+
+Language Support: Context-based i18n (English & Bangla)
+
+
+
+---
+
+Installation & Usage
+
+Clone the repository and install dependencies:
+
+git clone https://github.com/SiamAhmed32/furnishop.git
+cd furnishop
+npm install
+
+Run development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build for production:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run build
+npm start

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ShoppingCart, List, X } from "phosphor-react";
 import { useSelector } from "react-redux";
 import { useLang } from "../lib/langContext";
-import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -50,7 +49,6 @@ export default function Header() {
           >
             {lang === "en" ? "বাংলা" : "English"}
           </button>
-          <ThemeToggle />
 
           <Link href="/cart" className="relative">
             <ShoppingCart size={24} />
@@ -116,7 +114,6 @@ export default function Header() {
               >
                 {lang === "en" ? "বাংলা" : "English"}
               </button>
-              <ThemeToggle />
             </nav>
           </motion.div>
         )}

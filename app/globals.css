@@ -1,13 +1,30 @@
 @import "tailwindcss";
 
+/* If your project already relied on these, keep them. Otherwise you can remove.
+   Keeping them is the safest option for your current setup. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-  @apply bg-white text-neutral-900;
-  font-family: Arial, Helvetica, sans-serif;
+/* --- GLOBAL THEME BASE (very safe) --- */
+/* Next-themes adds class="dark" on <html>. We style both states directly. */
+html {
+  /* Light mode base */
+  /* Softer than pure white so cards/borders look nicer */
+  @apply bg-neutral-50 text-neutral-900;
 }
 
+html.dark {
+  /* Dark mode base */
+  @apply bg-neutral-950 text-neutral-100;
+}
 
+/* Let body inherit the html colors, and ensure full-viewport background */
+body {
+  @apply min-h-screen bg-inherit text-inherit antialiased;
+}
+
+/* Smoothen color changes without messing with layout/animation timing */
+* {
+  @apply transition-colors duration-200;
+}

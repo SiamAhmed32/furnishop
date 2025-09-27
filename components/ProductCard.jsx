@@ -5,18 +5,15 @@ import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../lib/slices/cartSlice";
 
-const itemVar = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
-};
-
 export default function ProductCard({ item }) {
   const dispatch = useDispatch();
 
   return (
     <>
       <motion.article
-        variants={itemVar}
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
         className="group rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900"
       >
         <Link href={`/products/${item.id}`}>

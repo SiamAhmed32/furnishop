@@ -6,8 +6,15 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 
 export default function ProductFilters({ value, onChange }) {
+  const safe = value || {
+    q: "",
+    category: "All",
+    min: "",
+    max: "",
+    rating: "",
+  };
   const [open, setOpen] = useState(false);
-  const update = (k, v) => onChange({ ...value, [k]: v });
+  const update = (k, v) => onChange({ ...safe, [k]: v });
 
   return (
     <section className="border-b border-neutral-200 dark:border-neutral-800">
@@ -18,7 +25,7 @@ export default function ProductFilters({ value, onChange }) {
             size={18}
           />
           <input
-            value={value.q}
+            value={safe.q}
             className="w-full pl-9 pr-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/70 backdrop-blur"
             placeholder="Search products…"
             onChange={(e) => update("q", e.target.value.toLowerCase())}
@@ -42,9 +49,9 @@ export default function ProductFilters({ value, onChange }) {
           <select
             className="rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/70 backdrop-blur p-2"
             onChange={(e) => update("category", e.target.value)}
-            value={value.category}
+            value={safe.category}
           >
-            {["All", ...categories.filter((c) => c !== "All")].map((c) => (
+            {categories.map((c) => (
               <option key={c} value={c}>
                 {c}
               </option>
@@ -57,7 +64,7 @@ export default function ProductFilters({ value, onChange }) {
             placeholder="Min price"
             className="rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/70 backdrop-blur p-2"
             onChange={(e) => update("min", e.target.value)}
-            value={value.min}
+            value={safe.min}
           />
           <input
             type="number"
@@ -65,12 +72,12 @@ export default function ProductFilters({ value, onChange }) {
             placeholder="Max price"
             className="rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/70 backdrop-blur p-2"
             onChange={(e) => update("max", e.target.value)}
-            value={value.max}
+            value={safe.max}
           />
           <select
             className="rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/70 backdrop-blur p-2"
             onChange={(e) => update("rating", e.target.value)}
-            value={value.rating}
+            value={safe.rating}
           >
             <option value="">Any rating</option>
             <option value="4.5">4.5+</option>

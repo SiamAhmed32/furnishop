@@ -8,6 +8,7 @@ import PromoBanner from '../components/PromoBanner';
 import Commitment from '../components/Commitment';
 import Testimonials from '../components/Testimonials';
 import Newsletter from '../components/Newsletter';
+import DealOfTheWeek from '@/components/DealOfTheWeek';
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroCarousel />
+        <DealOfTheWeek />
         <CategoryStrip />
         <TrendingGrid />
         <ValueProps />
