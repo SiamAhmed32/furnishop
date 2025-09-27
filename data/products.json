@@ -1,0 +1,149 @@
+[
+  {
+    "id": "sofa-aurora",
+    "title": "Aurora Modular Sofa",
+    "price": 680,
+    "rating": 4.7,
+    "category": "Living",
+    "image": "/images/sofa-aurora.jpg",
+    "description": "A modular sofa combining clean lines with plush comfort. Durable fabric and kiln-dried frame."
+  },
+  {
+    "id": "chair-nova",
+    "title": "Nova Lounge Chair",
+    "price": 210,
+    "rating": 4.5,
+    "category": "Living",
+    "image": "/images/chair-nova.jpg",
+    "description": "Ergonomic lounge chair with supportive curves and a breathable woven back."
+  },
+  {
+    "id": "coffee-brew",
+    "title": "Brew Coffee Table",
+    "price": 160,
+    "rating": 4.4,
+    "category": "Living",
+    "image": "/images/coffee-brew.jpg",
+    "description": "A minimalist coffee table crafted with walnut veneer and matte finish."
+  },
+  {
+    "id": "tv-stand-orion",
+    "title": "Orion TV Stand",
+    "price": 320,
+    "rating": 4.6,
+    "category": "Living",
+    "image": "/images/tv-stand-orion.jpg",
+    "description": "Low-profile media stand with cable management and sliding storage doors."
+  },
+
+  {
+    "id": "bed-luna",
+    "title": "Luna Bed Frame",
+    "price": 520,
+    "rating": 4.6,
+    "category": "Bedroom",
+    "image": "/images/bed-luna.jpg",
+    "description": "Minimalist oak bed with soft edges and strong slats. Pairs well with serene interiors."
+  },
+  {
+    "id": "wardrobe-zen",
+    "title": "Zen Wardrobe",
+    "price": 750,
+    "rating": 4.7,
+    "category": "Bedroom",
+    "image": "/images/wardrobe-zen.jpg",
+    "description": "Spacious sliding-door wardrobe with mirror finish and hidden compartments."
+  },
+  {
+    "id": "nightstand-pixel",
+    "title": "Pixel Nightstand",
+    "price": 140,
+    "rating": 4.5,
+    "category": "Bedroom",
+    "image": "/images/nightstand-pixel.jpg",
+    "description": "Compact side table with two drawers and a smooth lacquer finish."
+  },
+  {
+    "id": "dresser-echo",
+    "title": "Echo Dresser",
+    "price": 410,
+    "rating": 4.6,
+    "category": "Bedroom",
+    "image": "/images/dresser-echo.jpg",
+    "description": "Six-drawer dresser with soft-close rails and natural wood grain design."
+  },
+
+  {
+    "id": "table-zen",
+    "title": "Zen Dining Table",
+    "price": 450,
+    "rating": 4.8,
+    "category": "Dining",
+    "image": "/images/table-zen.jpg",
+    "description": "Solid-wood dining table with waterfall edge and protective matte finish."
+  },
+  {
+    "id": "chair-halo",
+    "title": "Halo Dining Chair",
+    "price": 120,
+    "rating": 4.3,
+    "category": "Dining",
+    "image": "/images/chair-halo.jpg",
+    "description": "Upholstered dining chair with supportive backrest and steel frame."
+  },
+  {
+    "id": "cabinet-crest",
+    "title": "Crest Side Cabinet",
+    "price": 340,
+    "rating": 4.5,
+    "category": "Dining",
+    "image": "/images/cabinet-crest.jpg",
+    "description": "Storage cabinet with adjustable shelves and glass-paneled doors."
+  },
+  {
+    "id": "stool-peak",
+    "title": "Peak Bar Stool",
+    "price": 180,
+    "rating": 4.4,
+    "category": "Dining",
+    "image": "/images/stool-peak.jpg",
+    "description": "Counter-height bar stool with cushioned seat and footrest."
+  },
+
+  {
+    "id": "lamp-glow",
+    "title": "Glow Floor Lamp",
+    "price": 120,
+    "rating": 4.4,
+    "category": "Decor",
+    "image": "/images/lamp-glow.jpg",
+    "description": "Sleek LED floor lamp with dimmable warm and cool light."
+  },
+  {
+    "id": "bookshelf-rise",
+    "title": "Rise Bookshelf",
+    "price": 260,
+    "rating": 4.5,
+    "category": "Decor",
+    "image": "/images/bookshelf-rise.jpg",
+    "description": "Five-tier open bookshelf with reinforced steel frame."
+  },
+  {
+    "id": "mirror-aura",
+    "title": "Aura Wall Mirror",
+    "price": 190,
+    "rating": 4.6,
+    "category": "Decor",
+    "image": "/images/mirror-aura.jpg",
+    "description": "Large round mirror with aluminum frame and anti-fog coating."
+  },
+  {
+    "id": "desk-flux",
+    "title": "Flux Office Desk",
+    "price": 360,
+    "rating": 4.7,
+    "category": "Decor",
+    "image": "/images/desk-flux.jpg",
+    "description": "Spacious office desk with cable ports and adjustable legs."
+  }
+]

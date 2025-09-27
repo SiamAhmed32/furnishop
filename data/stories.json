@@ -1,0 +1,41 @@
+[
+  {
+    "id": "living-trends-2025",
+    "title": "Living Room Trends for 2025",
+    "excerpt": "Discover the textures, colors, and layouts that will dominate living spaces this year...",
+    "image": "/images/hero1.jpg",
+    "author": "Design Studio",
+    "date": "2025-02-12",
+    "content": [
+      "In 2025, living rooms will embrace natural textures and muted colors.",
+      "Expect more sustainable materials like bamboo and reclaimed wood.",
+      "Minimalist layouts will continue, paired with modular sofas."
+    ]
+  },
+  {
+    "id": "workspace-inspiration",
+    "title": "Creating the Perfect Home Workspace",
+    "excerpt": "A guide to ergonomic, stylish, and distraction-free home office setups...",
+    "image": "/images/story2.jpg",
+    "author": "Interior Lab",
+    "date": "2025-01-28",
+    "content": [
+      "With remote work here to stay, creating an inspiring home office is essential.",
+      "Focus on ergonomic chairs, natural light, and noise reduction.",
+      "Add personal touches like plants and art to make it feel yours."
+    ]
+  },
+  {
+    "id": "dining-evolution",
+    "title": "The Evolution of Dining Spaces",
+    "excerpt": "From formal dining rooms to casual open layouts, see how trends have changed...",
+    "image": "/images/hero3.jpg",
+    "author": "Furniture Collective",
+    "date": "2025-01-10",
+    "content": [
+      "Dining spaces are no longer confined to a single purpose.",
+      "Families now embrace open-plan kitchens and living areas.",
+      "Multifunctional furniture helps small apartments maximize space."
+    ]
+  }
+]
